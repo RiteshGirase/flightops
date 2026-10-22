@@ -1,0 +1,17 @@
+name: CI
+
+on:                      # kab chalana hai?
+  push:
+    branches: [main]     # main pe push hone pe
+  pull_request:          # aur har PR pe
+
+jobs:
+  test:
+    runs-on: ubuntu-latest        # GitHub ek free Linux machine deta hai
+    steps:
+      - uses: actions/checkout@v4         # 1. repo ka code machine pe laao
+      - uses: actions/setup-python@v5     # 2. Python install karo
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt   # 3. libraries install karo
+      - run: pytest -v                          # 4. tests chalao
