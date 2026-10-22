@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-FLIGHTS = {"AI101": "Ontime", "6E202": "Delayed"}
+FLIGHTS = {"AI101": "On time", "6E202": "Delayed"}
 
 @app.get("/health")
 def health():
